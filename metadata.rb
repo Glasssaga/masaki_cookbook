@@ -4,7 +4,7 @@ maintainer_email 'glass.saga@gmail.com'
 license          'All rights reserved'
 description      'Set up my development environments'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
-version          '0.1.8'
+version          '0.1.9'
 depends          'homebrew'
 depends          'sudo'
 depends          'yum'
