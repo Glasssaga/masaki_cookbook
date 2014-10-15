@@ -12,6 +12,10 @@ if platform_family?("debian")
   end
 end
 
+execute "apt-get update" do
+  action :nothing
+end
+
 =begin
 # update
 case node[:platform_family]
