@@ -1,3 +1,4 @@
+include_recipe "sudo"
 include_recipe "users"
 
 if platform_family?("debian")
