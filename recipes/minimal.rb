@@ -1,4 +1,3 @@
-include_recipe "sudo"
 include_recipe "users"
 
 if platform_family?("debian")
@@ -14,6 +13,11 @@ end
 
 execute "apt-get update" do
   action :nothing
+end
+
+sudo do
+  group "sudo"
+  nopasswd true
 end
 
 =begin
