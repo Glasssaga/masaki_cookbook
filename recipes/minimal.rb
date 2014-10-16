@@ -15,7 +15,7 @@ execute "apt-get update" do
   action :nothing
 end
 
-sudo do
+sudo "sudo" do
   group "sudo"
   nopasswd true
 end
