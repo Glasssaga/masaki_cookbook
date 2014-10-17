@@ -1,7 +1,11 @@
 user "masaki" do
   comment "Masaki Matsushita"
   gid "sudo"
-  supports manage_home: true
+end
+
+directory "/home/masaki" do
+  mode 0700
+  owner "masaki"
 end
 
 directory "/home/masaki/.ssh" do
