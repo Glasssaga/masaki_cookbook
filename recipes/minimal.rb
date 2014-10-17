@@ -1,4 +1,4 @@
-include_recipe "users::sysadmin"
+include_recipe "users"
 
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
