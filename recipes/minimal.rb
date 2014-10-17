@@ -1,4 +1,4 @@
-include_recipe "users"
+include_recipe "user::data_bag"
 
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
