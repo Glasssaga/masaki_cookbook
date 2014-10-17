@@ -1,6 +1,6 @@
-include_recipe "ssh-keys"
-
-log data_bag("users").to_s
+data_bag("users") do |foo|
+  p foo
+end
 
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
