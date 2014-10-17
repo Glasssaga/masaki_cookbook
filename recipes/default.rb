@@ -83,7 +83,6 @@ end
 if platform_family?("debian")
   apt_package "sysv-rc-conf"
   apt_package "locales"
-  apt_package "language-pack-ja"
 end
 
 if platform_family?("rhel")

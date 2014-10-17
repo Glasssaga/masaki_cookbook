@@ -35,6 +35,10 @@ sudo "sudo" do
   nopasswd true
 end
 
+if platform_family?("debian")
+  apt_package "language-pack-ja"
+end
+
 =begin
 # update
 case node[:platform_family]
