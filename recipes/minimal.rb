@@ -1,9 +1,10 @@
 user "masaki" do
   comment "Masaki Matsushita"
   gid "sudo"
+  supports manage_home: true
 end
 
-directory "/home/masaki.ssh" do
+directory "/home/masaki/.ssh" do
   mode 0700
 end
 
