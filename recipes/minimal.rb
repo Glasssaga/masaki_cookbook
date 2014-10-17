@@ -1,6 +1,4 @@
-include_recipe "users"
-
-users_manage "masaki"
+include_recipe "users::sysadmin"
 
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
