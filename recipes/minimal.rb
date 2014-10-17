@@ -1,3 +1,5 @@
+include_recipe "chef-user"
+
 user_account "masaki" do
   commenct "Masaki Matsushita"
   ssh_keys [
