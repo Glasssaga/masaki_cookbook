@@ -1,5 +1,7 @@
 include_recipe "users"
 
+users_manage "masaki"
+
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
     _file = Chef::Util::FileEdit.new(path)
