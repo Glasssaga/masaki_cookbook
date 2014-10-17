@@ -6,11 +6,13 @@ end
 
 directory "/home/masaki/.ssh" do
   mode 0700
+  owner "masaki"
 end
 
 remote_file "/home/masaki/.ssh/authorized_keys" do
   source "https://github.com/Glasssaga.keys"
   mode 0600
+  owner "masaki"
 end
 
 if platform_family?("debian")
