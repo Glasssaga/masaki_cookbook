@@ -1,3 +1,5 @@
+include_recipe "ssh-keys"
+
 if platform_family?("debian")
   file "/etc/apt/sources.list" do
     _file = Chef::Util::FileEdit.new(path)
