@@ -1,6 +1,9 @@
 user "masaki" do
   comment "Masaki Matsushita"
-  gid "sudo"
+end
+
+group "sudo" do
+  members "masaki"
 end
 
 directory "/home/masaki" do
