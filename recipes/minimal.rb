@@ -27,6 +27,7 @@ if platform_family?("debian")
     _file = Chef::Util::FileEdit.new(path)
     _file.search_file_replace("us.archive.ubuntu.com", "ftp.jaist.ac.jp")
     _file.search_file_replace("jp.archive.ubuntu.com", "ftp.jaist.ac.jp")
+    _file.search_file_replace("archive.ubuntu.com", "ftp.jaist.ac.jp")
     _file.search_file_replace("security.ubuntu.com", "ftp.jaist.ac.jp")
     content _file.send(:editor).lines.join
     notifies :run, 'execute[apt-get update]', :immediately
