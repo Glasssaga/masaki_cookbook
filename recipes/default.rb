@@ -61,6 +61,7 @@ package "tmux"
 package "vim"
 package "htop"
 package "curl"
+package "nmap"
 
 unless platform?("mac_os_x")
   package "iotop"
