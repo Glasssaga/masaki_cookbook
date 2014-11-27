@@ -6,6 +6,11 @@ group "sudo" do
   members "masaki"
 end
 
+sudo "sudo" do
+  group "sudo"
+  nopasswd true
+end
+
 directory "/home/masaki" do
   mode 0700
   owner "masaki"
@@ -32,19 +37,16 @@ if platform_family?("debian")
     content _file.send(:editor).lines.join
     notifies :run, 'execute[apt-get update]', :immediately
   end
-end
 
-execute "apt-get update" do
-  action :nothing
-end
+  execute "apt-get update" do
+    action :nothing
+  end
 
-sudo "sudo" do
-  group "sudo"
-  nopasswd true
-end
-
-if platform_family?("debian")
   apt_package "language-pack-ja"
+
+  link "/etc/localtime" do
+    to "/usr/share/zoneinfo/Japan"
+  end
 end
 
 =begin
