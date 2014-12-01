@@ -62,6 +62,8 @@ package "vim"
 package "htop"
 package "curl"
 package "nmap"
+package "traceroute"
+package "tcptraceroute" if platform?("mac_os_x")
 
 unless platform?("mac_os_x")
   package "iotop"
