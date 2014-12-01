@@ -1,5 +1,3 @@
-include_recipe "minimal"
-
 # enable epel
 include_recipe "yum-epel" if platform_family?("rhel")
 
@@ -29,7 +27,6 @@ include_recipe "erlang::package"
 if platform_family?("rhel")
   #yum_package "php"
   yum_package "perl"
-  yum_package "traceroute"
   yum_package "nc"
 end
 
@@ -62,8 +59,6 @@ package "vim"
 package "htop"
 package "curl"
 package "nmap"
-package "traceroute"
-package "tcptraceroute" if platform?("mac_os_x")
 
 unless platform?("mac_os_x")
   package "iotop"
