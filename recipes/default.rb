@@ -1,9 +1,4 @@
 # enable epel
-include_recipe "yum-epel" if platform_family?("rhel")
-
-include_recipe "git"
-include_recipe "build-essential"
-include_recipe "openssl"
 
 if platform_family?("mac_os_x")
   package "readline"
@@ -46,7 +41,6 @@ end
 
 homebrew_tap "homebrew/dupes" if platform?("mac_os_x")
 
-package "zsh"
 package "cmake"
 package "binutils"
 package "wget"
