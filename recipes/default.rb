@@ -16,7 +16,7 @@ end
 include_recipe "postgresql::client"
 include_recipe "imagemagick"
 include_recipe "sqlite"
-include_recipe "mysql::client"
+include_recipe "mysql"
 include_recipe "erlang::package"
 
 if platform_family?("rhel")
