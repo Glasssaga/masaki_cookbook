@@ -9,8 +9,6 @@ else
   include_recipe "ncurses"
   include_recipe "python"
   include_recipe "java"
-  include_recipe "timezone-ii"
-  include_recipe "ntp"
 end
 
 include_recipe "postgresql::client"
