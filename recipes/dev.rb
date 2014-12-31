@@ -115,7 +115,7 @@ end
 
 #TODO: rmagick
 #TODO: berkshelf
-%w{
+GEMS = %w{
 bundler
 rails
 pry
@@ -136,10 +136,16 @@ fog
 capistrano
 fluentd
 bunny
-}.each do |gem_name|
-  execute "#{GEM_PATH} install #{gem_name}" do
-    user node[:user]
-    environment "HOME" => node[:home]
-    not_if "#{GEM_PATH} which #{gem_name}", user: node[:user], environment: { "HOME" => node[:home] }
-  end
+}
+
+GEMS.each do |gem|
+  gem_package gem
 end
+
+=begin
+execute "#{GEM_PATH} install #{gem_name}" do
+  user node[:user]
+  environment "HOME" => node[:home]
+  not_if "#{GEM_PATH} which #{gem_name}", user: node[:user], environment: { "HOME" => node[:home] }
+end
+=end
