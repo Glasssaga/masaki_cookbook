@@ -103,24 +103,11 @@ bash "symlink" do
   action :nothing
 end
 
-# force use of system gem, not chef_gem
-GEM_PATH = "/usr/local/bin/gem"
-
-execute "#{GEM_PATH} update --system"
-
-execute "#{GEM_PATH} update" do
-  user node[:user]
-  environment "HOME" => node[:home]
-end
-
-#TODO: rmagick
-#TODO: berkshelf
 GEMS = %w{
 bundler
 rails
 pry
 pry-doc
-tapp
 nokogiri
 execjs
 unicorn
@@ -128,24 +115,15 @@ aws-sdk
 rspec
 serverspec
 eventmachine
-wirble
 elasticsearch
 knife-solo
 therubyracer
-fog
-capistrano
 fluentd
 bunny
+rmagick
+daemons
 }
 
 GEMS.each do |gem|
   gem_package gem
 end
-
-=begin
-execute "#{GEM_PATH} install #{gem_name}" do
-  user node[:user]
-  environment "HOME" => node[:home]
-  not_if "#{GEM_PATH} which #{gem_name}", user: node[:user], environment: { "HOME" => node[:home] }
-end
-=end

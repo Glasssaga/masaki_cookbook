@@ -113,7 +113,7 @@ ruby_binary_dir = INSTALL_RUBY_VERSION.match(/^(\d\.\d)\.\d$/)[1] # e.g. "2.1"
 remote_file File.join(node[:download_dir], "ruby-#{INSTALL_RUBY_VERSION}.tar.bz2") do
   source "https://ftp.ruby-lang.org/pub/ruby/#{ruby_binary_dir}/ruby-#{INSTALL_RUBY_VERSION}.tar.bz2"
   owner node[:user]
-  notifies :run, "bash[build ruby]", :immediately
+  notifies :run, "bash[build ruby]"
 end
 
 bash "build ruby" do
@@ -125,12 +125,26 @@ make -j #{node[:cpu][:total]}
   EOS
   cwd node[:download_dir]
   user node[:user]
-  notifies :run, "bash[install ruby]", :immediately
+  notifies :run, "bash[install ruby]"
   action :nothing
 end
 
 bash "install ruby" do
   code "make install"
   cwd File.join(node[:download_dir], "ruby-#{INSTALL_RUBY_VERSION}")
+  notifies :run, "execute[rubygems-update]"
   action :nothing
+end
+
+# force use of system gem, not chef_gem
+GEM_PATH = "/usr/local/bin/gem"
+
+execute "rubygems-update" do
+  command "#{GEM_PATH} update --system"
+  notifies :run, "execute[gem-update]"
+  action :nothing
+end
+
+execute "gem-update" do
+  command "#{GEM_PATH} update"
 end
