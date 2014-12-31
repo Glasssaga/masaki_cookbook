@@ -63,15 +63,11 @@ unless platform?("centos")
   tmux_mem_cpu_load_path = File.join(Chef::Config[:file_cache_path], "tmux-mem-cpu-load")
   git tmux_mem_cpu_load_path do
     repository "https://github.com/thewtex/tmux-mem-cpu-load"
-    notifies :run, "bash[build tmux-mem-cpu-load]", :immediately
+    notifies :run, "bash[build tmux-mem-cpu-load]"
   end
 
   bash "build tmux-mem-cpu-load" do
-    code <<-EOS
-  cmake . && \
-  make && \
-  make install
-    EOS
+    code "cmake . && make && make install"
     cwd tmux_mem_cpu_load_path
     not_if "which tmux-mem-cpu-load"
     action :nothing
