@@ -107,7 +107,7 @@ end
 
 #TODO: NeoBundleInstall
 
-INSTALL_RUBY_VERSION = "2.1.4"
+INSTALL_RUBY_VERSION = "2.2.0"
 ruby_binary_dir = INSTALL_RUBY_VERSION.match(/^(\d\.\d)\.\d$/)[1] # e.g. "2.1"
 
 remote_file File.join(node[:download_dir], "ruby-#{INSTALL_RUBY_VERSION}.tar.bz2") do
