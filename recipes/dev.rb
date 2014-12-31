@@ -115,7 +115,6 @@ knife-solo
 therubyracer
 fluentd
 bunny
-rmagick
 daemons
 }
 
