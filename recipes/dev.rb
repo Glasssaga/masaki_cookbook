@@ -7,7 +7,6 @@ package "s3cmd"
 package "nkf"
 package "ansible"
 package "mercurial"
-package "jq"
 package "valgrind"
 
 if platform?("mac_os_x")
