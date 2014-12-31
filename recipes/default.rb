@@ -147,4 +147,5 @@ end
 
 execute "gem-update" do
   command "#{GEM_PATH} update"
+  action :nothing
 end
