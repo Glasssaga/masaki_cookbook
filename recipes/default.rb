@@ -16,8 +16,9 @@ end
 include_recipe "postgresql::client"
 include_recipe "imagemagick"
 include_recipe "sqlite"
-include_recipe "mysql"
 include_recipe "erlang::package"
+
+mysql_client "default"
 
 if platform_family?("rhel")
   #yum_package "php"
