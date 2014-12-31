@@ -1,3 +1,5 @@
+include_recipe "masaki::default"
+
 package "gdb"
 package "gnupg"
 package "gnupg2"
