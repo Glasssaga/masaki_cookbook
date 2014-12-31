@@ -121,7 +121,7 @@ bash "build ruby" do
 tar xjf ruby-#{INSTALL_RUBY_VERSION}.tar.bz2 && \
 cd ruby-#{INSTALL_RUBY_VERSION} && \
 ./configure --disable-install-doc && \
-make -j #{Integer(node[:cpu][:total])}
+make -j #{node[:cpu][:total]}
   EOS
   cwd node[:download_dir]
   user node[:user]
