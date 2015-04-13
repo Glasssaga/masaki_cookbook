@@ -90,6 +90,10 @@ execute "checkout master(dotfiles)" do
   action :nothing
 end
 
+remote_file File.join("/home", node[:user], ".antigen.zsh") do
+  source "https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh"
+end
+
 bash "symlink" do
   cwd dotfiles_path
   code "./symlink.sh"
