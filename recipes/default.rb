@@ -69,6 +69,7 @@ else
   package "libyaml-dev"
   package "libbz2-dev"
   package "zlib1g-dev"
+  package "libevent-dev"
 end
 
 if platform_family?("debian")
