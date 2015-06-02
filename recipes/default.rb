@@ -52,6 +52,7 @@ package "vim"
 package "htop"
 package "curl"
 package "nmap"
+package "git-review"
 
 unless platform?("mac_os_x")
   package "iotop"
