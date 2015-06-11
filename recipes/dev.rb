@@ -8,6 +8,7 @@ package "nkf"
 package "ansible"
 package "mercurial"
 package "valgrind"
+package "bison"
 
 if platform?("mac_os_x")
   package "go"
