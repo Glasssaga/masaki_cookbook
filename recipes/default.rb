@@ -103,11 +103,6 @@ when "debian"
   apt_package "manpages-ja"
 end
 
-# change shell of root
-execute "chsh -s /bin/zsh" do
-  not_if "test $SHELL = '/bin/zsh'"
-end
-
 ssh_known_hosts_entry "github.com" unless platform?("mac_os_x")
 
 directory node[:download_dir] do
