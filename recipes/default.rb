@@ -2,6 +2,11 @@ include_recipe "users"
 
 cookbook_file "/etc/apt/sources.list" do
   source "sources.list"
+  notify :run, "execute[apt-get update]"
+end
+
+execute "apt-get update" do
+  action :nothing
 end
 
 if platform_family?("mac_os_x")
@@ -10,7 +15,7 @@ if platform_family?("mac_os_x")
 else
   include_recipe "xml"
   include_recipe "readline"
-  #include_recipe "ncurses"
+  include_recipe "ncurses"
   include_recipe "python"
   include_recipe "java"
 end
