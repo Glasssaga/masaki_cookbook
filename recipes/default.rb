@@ -10,7 +10,7 @@ if platform_family?("mac_os_x")
 else
   include_recipe "xml"
   include_recipe "readline"
-  include_recipe "ncurses"
+  #include_recipe "ncurses"
   include_recipe "python"
   include_recipe "java"
 end
