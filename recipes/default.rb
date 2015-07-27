@@ -1,4 +1,5 @@
 include_recipe "users::sysadmins"
+include_recipe "hostname"
 
 cookbook_file "/etc/apt/sources.list" do
   source "sources.list"
