@@ -12,3 +12,5 @@ default[:authorization][:sudo][:include_sudoers_d] = true
 
 # java
 default[:java][:jdk_version] = 7
+
+default[:set_fqdn] = node.name
