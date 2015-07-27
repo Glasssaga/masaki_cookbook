@@ -90,7 +90,6 @@ LANG="ja_JP.UTF-8"
   end
 end
 
-=begin
 # japanese manpages
 case node[:platform_family]
 when "rhel"
@@ -98,7 +97,6 @@ when "rhel"
 when "debian"
   apt_package "manpages-ja"
 end
-=end
 
 # change shell of root
 execute "chsh -s /bin/zsh" do
