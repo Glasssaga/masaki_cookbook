@@ -96,15 +96,10 @@ LANG="ja_JP.UTF-8"
   end
 end
 
-# japanese manpages
-case node[:platform_family]
-when "rhel"
-  yum_package "man-pages-ja"
-when "debian"
-  apt_package "manpages-ja"
+unless platform?("mac_os_x")
+  ssh_known_hosts_entry "github.com"
+  ssh_known_hosts_entry "review.openstack.org"
 end
-
-ssh_known_hosts_entry "github.com" unless platform?("mac_os_x")
 
 directory node[:download_dir] do
   owner node[:user]
