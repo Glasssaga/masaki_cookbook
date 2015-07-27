@@ -2,7 +2,7 @@ include_recipe "users"
 
 cookbook_file "/etc/apt/sources.list" do
   source "sources.list"
-  notify :run, "execute[apt-get update]"
+  notifies :run, "execute[apt-get update]"
 end
 
 execute "apt-get update" do
