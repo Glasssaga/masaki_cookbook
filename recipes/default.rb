@@ -1,4 +1,8 @@
-# enable epel
+include_recipe "users"
+
+remote_file "/etc/apt/sources.list" do
+  source "sources.list"
+end
 
 if platform_family?("mac_os_x")
   package "readline"

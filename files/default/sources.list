@@ -1,0 +1,11 @@
+deb http://mirror.cloudcore-tu.net/ubuntu trusty main restricted universe multiverse
+deb-src http://mirror.cloudcore-tu.net/ubuntu trusty main restricted universe multiverse
+
+deb http://mirror.cloudcore-tu.net/ubuntu trusty-updates main restricted universe multiverse
+deb-src http://mirror.cloudcore-tu.net/ubuntu trusty-updates main restricted universe multiverse
+
+#
+# Security updates
+#
+deb http://mirror.cloudcore-tu.net/ubuntu trusty-security main restricted universe multiverse
+deb-src http://mirror.cloudcore-tu.net/ubuntu trusty-security main restricted universe multiverse
