@@ -96,6 +96,11 @@ LANG="ja_JP.UTF-8"
   end
 end
 
+sudo "sysadmin" do
+  group "sysadmin"
+  nopasswd true
+end
+
 unless platform?("mac_os_x")
   ssh_known_hosts_entry "github.com"
   ssh_known_hosts_entry "review.openstack.org"
