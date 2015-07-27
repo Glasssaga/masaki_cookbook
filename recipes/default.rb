@@ -105,7 +105,9 @@ directory node[:download_dir] do
   owner node[:user]
 end
 
-#TODO: NeoBundleInstall
+execute "vim +':NeoBundleInstall' +:q" do
+  user node[:user]
+end
 
 INSTALL_RUBY_VERSION = "2.2.2"
 ruby_binary_dir = INSTALL_RUBY_VERSION.match(/^(\d\.\d)\.\d$/)[1] # e.g. "2.1"
