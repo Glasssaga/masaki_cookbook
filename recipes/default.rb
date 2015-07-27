@@ -1,8 +1,6 @@
 include_recipe "users"
 
-remote_file "/etc/apt/sources.list" do
-  source "sources.list"
-end
+file "/etc/apt/sources.list"
 
 if platform_family?("mac_os_x")
   package "readline"
