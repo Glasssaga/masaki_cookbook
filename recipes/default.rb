@@ -156,3 +156,6 @@ execute "gem-update" do
   command "#{GEM_PATH} update"
   action :nothing
 end
+
+execute "DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y"
+execute "apt-get autoremove -y"
