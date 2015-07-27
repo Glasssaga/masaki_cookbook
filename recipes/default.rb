@@ -1,6 +1,8 @@
 include_recipe "users"
 
-file "/etc/apt/sources.list"
+cookbook_file "/etc/apt/sources.list" do
+  source "sources.list"
+end
 
 if platform_family?("mac_os_x")
   package "readline"
